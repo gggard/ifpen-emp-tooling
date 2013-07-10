@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            name="Reverse Category"
+            id="fr.ifpen.emptooling.reverse.ui.category">
+      </category>
+      <command
+            name="Reverse to Ecore Command"
+            categoryId="fr.ifpen.emptooling.reverse.ui.category"
+            id="fr.ifpen.emptooling.reverse.ui.commands.reverseToEcoreCommand">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            commandId="fr.ifpen.emptooling.reverse.ui.commands.reverseToEcoreCommand"
+            class="fr.ifpen.emptooling.reverse.ui.handlers.ReverseToEcoreHandler">
+      </handler>
+   </extension>
+   <extension point="org.eclipse.ui.menus">
+      <menuContribution
+      		allPopups="true"
+            locationURI="popup:org.eclipse.jdt.ui.PackageExplorer">
+         <menu
+               label="Reverse"
+               mnemonic="R"
+               id="fr.ifpen.emptooling.reverse.ui.menus.reverseMenu">
+            <command
+                  commandId="fr.ifpen.emptooling.reverse.ui.commands.reverseToEcoreCommand"
+                  mnemonic="R"
+                  id="fr.ifpen.emptooling.reverse.ui.menus.sampleCommand">
+           </command>
+            <visibleWhen checkEnabled="false">
+				<with variable="selection">
+         			<iterate operator="or">
+         				<or>
+            				<instanceof value="org.eclipse.jdt.core.IJavaProject" />
+            				<instanceof value="org.eclipse.jdt.core.IPackageFragment" />
+            			</or>
+         			</iterate>
+      			</with>        
+      		</visibleWhen>
+         </menu>
+      </menuContribution>
+   </extension>
+
+</plugin>
