@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/fr.ifpen.emptooling.filter/src-gen"
+    creationIcons="false" editDirectory="/fr.ifpen.emptooling.filter.edit/src-gen" editorDirectory="/fr.ifpen.emptooling.filter.editor/src-gen"
+    modelPluginID="fr.ifpen.emptooling.filter" modelName="Filter" testsDirectory="/fr.ifpen.emptooling.filter.tests/src-gen"
+    importerID="org.eclipse.emf.importer.ecore" containmentProxies="true" complianceLevel="6.0"
+    copyrightFields="false">
+  <foreignModel>filter.ecore</foreignModel>
+  <genPackages prefix="Filter" basePackage="fr.ifpen.model" disposableProviderFactory="true"
+      ecorePackage="filter.ecore#/">
+    <genClasses ecoreClass="filter.ecore#//Filter">
+      <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference filter.ecore#//Filter/target"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference filter.ecore#//Filter/subFilters"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

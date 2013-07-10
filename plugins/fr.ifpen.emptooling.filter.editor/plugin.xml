@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="fr.ifpen.emptooling.filter.presentation.FilterModelWizardID"
+            name="%_UI_FilterModelWizard_label"
+            class="fr.ifpen.emptooling.filter.presentation.IFPFilterModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/FilterModelFile.gif">
+         <description>%_UI_FilterModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="fr.ifpen.emptooling.filter.presentation.FilterEditorID"
+            name="%_UI_FilterEditor_label"
+            icon="icons/full/obj16/FilterModelFile.gif"
+            extensions="filter"
+            class="fr.ifpen.emptooling.filter.presentation.editor.IFPFilterEditor"
+            contributorClass="fr.ifpen.emptooling.filter.presentation.FilterActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
