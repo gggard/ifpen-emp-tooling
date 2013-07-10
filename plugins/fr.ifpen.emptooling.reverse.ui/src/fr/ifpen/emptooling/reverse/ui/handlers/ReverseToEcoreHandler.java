@@ -26,12 +26,12 @@ import java.util.List;
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
+import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
-import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IResource;
-import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EPackage;
@@ -45,15 +45,16 @@ import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.operation.IRunnableWithProgress;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.window.Window;
+import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
-import org.eclipse.ui.dialogs.ContainerSelectionDialog;
 import org.eclipse.ui.handlers.HandlerUtil;
 
 import fr.ifpen.emptooling.reverse.JavaToEcore;
 import fr.ifpen.emptooling.reverse.ReverseSettings;
 import fr.ifpen.emptooling.reverse.ui.ReverseUIPlugin;
+import fr.ifpen.emptooling.reverse.ui.wizards.ReverseToEcoreWizard;
 
 /**
  * @author <a href="mailto:goulwen.lefur@obeo.fr">Goulwen Le Fur</a>
@@ -82,14 +83,17 @@ public class ReverseToEcoreHandler extends AbstractHandler {
 								javaPackages.add(pf);
 							}
 						}
-						final ReverseSettings reverseSettings = new ReverseSettings();
-						reverseSettings.rootNsPrefix = "demo";
-						reverseSettings.rootNsURI = "http://www.demo.com/model";
-						reverseSettings.rootPackageName = "demo";
+						
+						ReverseToEcoreWizard wizard = new ReverseToEcoreWizard();
+						WizardDialog dialog = new WizardDialog(activeShell, wizard);
+						wizard.setWindowTitle("Reverse configuration");
 
-						ContainerSelectionDialog selectionDialog = new ContainerSelectionDialog(activeShell, javaProject.getProject().getParent(), false, "Select target directory");
-						if (selectionDialog.open() == Window.OK) {
-							final IFolder target = javaProject.getProject().getWorkspace().getRoot().getFolder((IPath) selectionDialog.getResult()[0]);
+						if (dialog.open() == Window.OK) {
+							final ReverseSettings reverseSettings = new ReverseSettings();
+							reverseSettings.rootNsPrefix = wizard.getBaseNSPrefix();
+							reverseSettings.rootNsURI = wizard.getBaseURI();
+							reverseSettings.rootPackageName = javaProject.getElementName();
+							final IContainer target = wizard.getTargetContainer();
 							IRunnableWithProgress operation = new IRunnableWithProgress() {
 								public void run(IProgressMonitor monitor) {
 									try {
@@ -112,7 +116,7 @@ public class ReverseToEcoreHandler extends AbstractHandler {
 												// write logs
 												String NL = System.getProperty("line.separator");
 												List<String> log = javaToEcore.getErrorLog();
-												IFile parsingLogFile = target.getFile(modelFilename + "ParsingLog.csv");
+												IFile parsingLogFile = target.getFile(new Path(modelFilename + "ParsingLog.csv"));
 												Writer w = new BufferedWriter(new FileWriter(parsingLogFile.getLocation().toOSString()));
 												for (String s : log) {
 													w.write(s);
@@ -120,7 +124,7 @@ public class ReverseToEcoreHandler extends AbstractHandler {
 												}
 												w.close();
 												log = javaToEcore.getGetterLog();
-												IFile gettingLogFile = target.getFile(modelFilename + "GetterLog.csv");
+												IFile gettingLogFile = target.getFile(new Path(modelFilename + "GetterLog.csv"));
 												w = new BufferedWriter(new FileWriter(gettingLogFile.getLocation().toOSString()));
 												for (String s : log) {
 													w.write(s);
@@ -128,7 +132,7 @@ public class ReverseToEcoreHandler extends AbstractHandler {
 												}
 												w.close();
 												// write model
-												IFile file = target.getFile(modelFilename + ".ecore");
+												IFile file = target.getFile(new Path(modelFilename + ".ecore"));
 												URI uri = URI.createFileURI(file.getLocation().toOSString());
 												Resource resource = new EcoreResourceFactoryImpl().createResource(uri);
 												resource.getContents().add(reverse);

@@ -15,6 +15,7 @@ Import-Package: fr.ifpen.emptooling.reverse,
  org.eclipse.emf.ecore.xmi.impl,
  org.eclipse.jdt.core,
  org.eclipse.ui.dialogs,
+ org.eclipse.ui.model,
  org.osgi.framework;version="1.7.0"
 Bundle-Activator: fr.ifpen.emptooling.reverse.ui.ReverseUIPlugin
 Bundle-ActivationPolicy: lazy
