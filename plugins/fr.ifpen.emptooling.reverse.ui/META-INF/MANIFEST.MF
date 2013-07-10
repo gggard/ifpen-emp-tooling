@@ -8,7 +8,8 @@ Require-Bundle: org.eclipse.ui
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Import-Package: fr.ifpen.emptooling.reverse,
  org.eclipse.core.resources,
- org.eclipse.core.runtime;version="3.4.0",
+ org.eclipse.core.runtime,
+ org.eclipse.core.runtime.jobs,
  org.eclipse.emf.common.util,
  org.eclipse.emf.ecore,
  org.eclipse.emf.ecore.resource,
@@ -16,6 +17,6 @@ Import-Package: fr.ifpen.emptooling.reverse,
  org.eclipse.jdt.core,
  org.eclipse.ui.dialogs,
  org.eclipse.ui.model,
- org.osgi.framework;version="1.7.0"
+ org.osgi.framework
 Bundle-Activator: fr.ifpen.emptooling.reverse.ui.ReverseUIPlugin
 Bundle-ActivationPolicy: lazy
