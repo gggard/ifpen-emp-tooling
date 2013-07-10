@@ -21,6 +21,7 @@ import java.util.Map;
 
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EcoreFactory;
+import org.eclipse.jdt.core.IPackageFragment;
 
 /**
  * @author <a href="mailto:sebastien.schneider@ifpen.fr">Sebastien Schneider</a>
@@ -36,7 +37,7 @@ public class ReverseSettings {
 
     public Map<String, PackageSettings> packageParams = new HashMap<String, PackageSettings>();
 
-    public class PackageSettings {
+    public static class PackageSettings {
 
         public String packageName, nsPrefix, nsURI;
 
@@ -51,6 +52,30 @@ public class ReverseSettings {
 
         protected void configurePackage(EPackage subPackage) {
         }
+    }
+    
+    public static class DefaultPackageSetting extends PackageSettings {
+    	
+    	private String baseURI;
+    	private String baseNSPrefix;
+    	private IPackageFragment packageFragment;
+
+        public DefaultPackageSetting(String baseURI, String baseNSPrefix, IPackageFragment packageFragment) {
+			this.baseURI = baseURI;
+			this.baseNSPrefix = baseNSPrefix;
+			this.packageFragment = packageFragment;
+		}
+
+		public EPackage createEcorePackage() {
+            EPackage subPackage = EcoreFactory.eINSTANCE.createEPackage();
+            String name = packageFragment.getElementName();
+			subPackage.setName(name);
+            subPackage.setNsURI(baseURI + "/" + name);
+            subPackage.setNsPrefix(baseNSPrefix + "-" + name);
+            return subPackage;
+        }
+		
+    
     }
 
 }

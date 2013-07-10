@@ -65,6 +65,7 @@ import org.eclipse.jdt.core.ITypeHierarchy;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.core.Signature;
 
+import fr.ifpen.emptooling.reverse.ReverseSettings.DefaultPackageSetting;
 import fr.ifpen.emptooling.reverse.ReverseSettings.PackageSettings;
 
 /**
@@ -108,6 +109,10 @@ public class JavaToEcore {
     private final EcoreFactory eFactory;
 
     private final String packageDataTypesName = "dataTypes";
+
+	private String baseURI;
+
+	private String baseNSPrefix;
 
     public static final String MODEL_EXTENSION_POINT_ID = "fr.ifpen.atelier.model";
 
@@ -184,7 +189,15 @@ public class JavaToEcore {
         eJavaPrimitiveTypes.put("Z", "boolean");
     }
 
-    /**
+    public void setBaseURI(String baseURI) {
+		this.baseURI = baseURI;
+	}
+
+	public void setBaseNSPrefix(String baseNSPrefix) {
+		this.baseNSPrefix = baseNSPrefix;
+	}
+
+	/**
      * Reverse the java project into an EcoreModel.
      * 
      * @return the {@link EPackage} corresponding to the java project parsed.
@@ -258,9 +271,13 @@ public class JavaToEcore {
      */
     protected EPackage processPackage(IPackageFragment package_) throws JavaModelException {
         PackageSettings packageParams = params.packageParams.get(package_.getElementName());
-
-        // create and configure sub-package
-        EPackage subPackage = packageParams.createEcorePackage();
+        EPackage subPackage = null;
+        if (packageParams != null) {
+        	// create and configure sub-package
+			subPackage = packageParams.createEcorePackage();
+        } else {
+        	subPackage = new DefaultPackageSetting(baseURI, baseNSPrefix, package_).createEcorePackage();
+        }
         // process java source file from this package
         ICompilationUnit[] compilationUnits = package_.getCompilationUnits();
         List<ICompilationUnit> listOfCUs = Arrays.asList(compilationUnits);

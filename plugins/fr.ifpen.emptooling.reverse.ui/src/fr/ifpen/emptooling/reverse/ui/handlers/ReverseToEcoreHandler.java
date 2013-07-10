@@ -1,3 +1,18 @@
+/**
+ * <copyright>
+ *
+ * Copyright (c) 2013 IFPEN and Obeo.
+ * All rights reserved.   This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors: 
+ *   Obeo - Initial API and implementation.
+ *
+ * </copyright>
+ *
+ */
 package fr.ifpen.emptooling.reverse.ui.handlers;
 
 import java.io.BufferedWriter;
@@ -41,19 +56,12 @@ import fr.ifpen.emptooling.reverse.ReverseSettings;
 import fr.ifpen.emptooling.reverse.ui.ReverseUIPlugin;
 
 /**
- * Our sample handler extends AbstractHandler, an IHandler base class.
- * @see org.eclipse.core.commands.IHandler
- * @see org.eclipse.core.commands.AbstractHandler
+ * @author <a href="mailto:goulwen.lefur@obeo.fr">Goulwen Le Fur</a>
+ * 
  */
 public class ReverseToEcoreHandler extends AbstractHandler {
 
 	private List<IPackageFragment> javaPackages = new ArrayList<IPackageFragment>();
-
-	/**
-	 * The constructor.
-	 */
-	public ReverseToEcoreHandler() {
-	}
 
 	/**
 	 * the command has been executed, so extract extract the needed information
@@ -96,6 +104,8 @@ public class ReverseToEcoreHandler extends AbstractHandler {
 											javaToEcore = new JavaToEcore(javaProject, reverseSettings);
 										}
 										if (javaToEcore != null) {
+											javaToEcore.setBaseURI(reverseSettings.rootNsURI);
+											javaToEcore.setBaseNSPrefix(reverseSettings.rootNsPrefix);
 											EPackage reverse = javaToEcore.reverse(monitor);
 											if (reverse != null) {
 												String modelFilename = "reverse";
@@ -103,7 +113,7 @@ public class ReverseToEcoreHandler extends AbstractHandler {
 												String NL = System.getProperty("line.separator");
 												List<String> log = javaToEcore.getErrorLog();
 												IFile parsingLogFile = target.getFile(modelFilename + "ParsingLog.csv");
-												Writer w = new BufferedWriter(new FileWriter(parsingLogFile.getFullPath().toOSString()));
+												Writer w = new BufferedWriter(new FileWriter(parsingLogFile.getLocation().toOSString()));
 												for (String s : log) {
 													w.write(s);
 													w.write(NL);
@@ -111,7 +121,7 @@ public class ReverseToEcoreHandler extends AbstractHandler {
 												w.close();
 												log = javaToEcore.getGetterLog();
 												IFile gettingLogFile = target.getFile(modelFilename + "GetterLog.csv");
-												w = new BufferedWriter(new FileWriter(gettingLogFile.getFullPath().toOSString()));
+												w = new BufferedWriter(new FileWriter(gettingLogFile.getLocation().toOSString()));
 												for (String s : log) {
 													w.write(s);
 													w.write(NL);
@@ -119,7 +129,7 @@ public class ReverseToEcoreHandler extends AbstractHandler {
 												w.close();
 												// write model
 												IFile file = target.getFile(modelFilename + ".ecore");
-												URI uri = URI.createFileURI(file.getFullPath().toOSString());
+												URI uri = URI.createFileURI(file.getLocation().toOSString());
 												Resource resource = new EcoreResourceFactoryImpl().createResource(uri);
 												resource.getContents().add(reverse);
 												resource.save(Collections.EMPTY_MAP);
