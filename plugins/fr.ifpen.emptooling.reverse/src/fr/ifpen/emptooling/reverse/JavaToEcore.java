@@ -116,7 +116,8 @@ public class JavaToEcore {
      * @throws IOException
      * @throws JavaModelException
      */
-    public JavaToEcore(IJavaProject project, ReverseSettings params) throws IOException, JavaModelException {
+    public JavaToEcore(IJavaProject project, ReverseSettings params) throws IOException,
+            JavaModelException {
         this(project, Collections.<IPackageFragment> emptyList(), params);
     }
 
@@ -126,7 +127,8 @@ public class JavaToEcore {
      * @throws IOException
      * @throws JavaModelException
      */
-    public JavaToEcore(IJavaProject javaProject, List<IPackageFragment> javaPackages, ReverseSettings params) throws IOException, JavaModelException {
+    public JavaToEcore(IJavaProject javaProject, List<IPackageFragment> javaPackages,
+            ReverseSettings params) throws IOException, JavaModelException {
         this.params = params;
         project = javaProject;
         packages = javaPackages;
@@ -258,7 +260,7 @@ public class JavaToEcore {
         PackageSettings packageParams = params.packageParams.get(package_.getElementName());
 
         // create and configure sub-package
-        EPackage subPackage = packageParams.createEcorePackage(eFactory);
+        EPackage subPackage = packageParams.createEcorePackage();
         // process java source file from this package
         ICompilationUnit[] compilationUnits = package_.getCompilationUnits();
         List<ICompilationUnit> listOfCUs = Arrays.asList(compilationUnits);

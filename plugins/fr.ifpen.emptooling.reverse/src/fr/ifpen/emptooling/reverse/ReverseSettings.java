@@ -25,23 +25,23 @@ import org.eclipse.emf.ecore.EcoreFactory;
 /**
  * @author <a href="mailto:sebastien.schneider@ifpen.fr">Sebastien Schneider</a>
  * @author <a href="mailto:goulwen.lefur@obeo.fr">Goulwen Le Fur</a>
- *
  */
 public class ReverseSettings {
 
-	public String rootPackageName;
-	public String rootNsPrefix;
-	public String rootNsURI;
-	
+    public String rootPackageName;
+
+    public String rootNsPrefix;
+
+    public String rootNsURI;
+
     public Map<String, PackageSettings> packageParams = new HashMap<String, PackageSettings>();
-    
-    
+
     public class PackageSettings {
 
         public String packageName, nsPrefix, nsURI;
-    	
-        public EPackage createEcorePackage(EcoreFactory factory) {
-            EPackage subPackage = factory.createEPackage();
+
+        public EPackage createEcorePackage() {
+            EPackage subPackage = EcoreFactory.eINSTANCE.createEPackage();
             subPackage.setName(packageName);
             subPackage.setNsPrefix(nsPrefix);
             subPackage.setNsURI(nsURI);
@@ -49,9 +49,8 @@ public class ReverseSettings {
             return subPackage;
         }
 
+        protected void configurePackage(EPackage subPackage) {
+        }
     }
-
-
-	protected void configurePackage(EPackage subPackage) {	}
 
 }
