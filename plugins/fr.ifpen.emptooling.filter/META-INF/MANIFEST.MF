@@ -7,7 +7,7 @@ Export-Package: fr.ifpen.emptooling.filter,
 Bundle-Vendor: %providerName
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .
-Bundle-Version: 1.1.0.201304251353
+Bundle-Version: 1.1.0.qualifier
 Bundle-Localization: plugin
 Bundle-Name: %pluginName
 Bundle-ManifestVersion: 2

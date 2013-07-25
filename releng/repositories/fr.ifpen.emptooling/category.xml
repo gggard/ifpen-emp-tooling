@@ -3,9 +3,17 @@
    <feature url="features/fr.ifpen.emptooling.reverse.feature_1.0.0.qualifier.jar" id="fr.ifpen.emptooling.reverse.feature" version="1.0.0.qualifier">
       <category name="fr.ifpen.emptooling.reverse"/>
    </feature>
+   <feature url="features/fr.ifpen.emptooling.filter.feature_1.0.0.qualifier.jar" id="fr.ifpen.emptooling.filter.feature" version="1.0.0.qualifier">
+      <category name="fr.ifpen.emptooling.filter"/>
+   </feature>
    <category-def name="fr.ifpen.emptooling.reverse" label="Reverse">
       <description>
          EMP Reverse Tooling
+      </description>
+   </category-def>
+   <category-def name="fr.ifpen.emptooling.filter" label="Model Filtering">
+      <description>
+         EMP Filtering Tooling
       </description>
    </category-def>
 </site>

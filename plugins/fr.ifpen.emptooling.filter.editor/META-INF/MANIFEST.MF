@@ -13,7 +13,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.edit.ui;visibility:=reexport,
  org.eclipse.ui.ide;visibility:=reexport
 Bundle-Vendor: %providerName
-Bundle-Version: 1.1.0.201304251353
+Bundle-Version: 1.1.0.qualifier
 Bundle-ManifestVersion: 2
 Bundle-Activator: fr.ifpen.emptooling.filter.presentation.FilterEditorPlugi
  n$Implementation

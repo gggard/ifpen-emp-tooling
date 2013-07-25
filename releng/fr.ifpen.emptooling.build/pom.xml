@@ -41,7 +41,11 @@
   <modules>
   	<module>../../plugins/fr.ifpen.emptooling.reverse</module>
   	<module>../../plugins/fr.ifpen.emptooling.reverse.ui</module>
+  	<module>../../plugins/fr.ifpen.emptooling.filter</module>
+  	<module>../../plugins/fr.ifpen.emptooling.filter.edit</module>
+  	<module>../../plugins/fr.ifpen.emptooling.filter.editor</module>
   	<module>../features/fr.ifpen.emptooling.reverse.feature</module>
+  	<module>../features/fr.ifpen.emptooling.filter.feature</module>
   	<module>../repositories/fr.ifpen.emptooling</module>
   </modules>
 

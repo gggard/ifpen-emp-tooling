@@ -12,10 +12,10 @@
     <relativePath>../../fr.ifpen.emptooling.parent/pom.xml</relativePath>
   </parent>
 
-  <artifactId>fr.ifpen.emptooling.reverse.feature</artifactId>
+  <artifactId>fr.ifpen.emptooling.filter.feature</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>eclipse-feature</packaging>
 
-  <name>Java to Ecore reverse Feature</name>
+  <name>Model Filtering Feature</name>
 
 </project>
