@@ -4,7 +4,9 @@ Bundle-Name: UI plugin for Java to Ecore reverse tooling
 Bundle-SymbolicName: fr.ifpen.emptooling.reverse.ui; singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: IFPEN
-Require-Bundle: org.eclipse.ui
+Require-Bundle: org.eclipse.ui.workbench,
+ org.eclipse.ui,
+ org.eclipse.ui.ide
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Import-Package: fr.ifpen.emptooling.reverse,
  org.eclipse.core.resources,
@@ -15,8 +17,6 @@ Import-Package: fr.ifpen.emptooling.reverse,
  org.eclipse.emf.ecore.resource,
  org.eclipse.emf.ecore.xmi.impl,
  org.eclipse.jdt.core,
- org.eclipse.ui.dialogs,
- org.eclipse.ui.model,
  org.osgi.framework
 Bundle-Activator: fr.ifpen.emptooling.reverse.ui.ReverseUIPlugin
 Bundle-ActivationPolicy: lazy

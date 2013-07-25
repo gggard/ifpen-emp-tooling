@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/fr.ifpen.emptooling.reverse.feature_1.0.0.qualifier.jar" id="fr.ifpen.emptooling.reverse.feature" version="1.0.0.qualifier">
+      <category name="fr.ifpen.emptooling.reverse"/>
+   </feature>
+   <category-def name="fr.ifpen.emptooling.reverse" label="Reverse">
+      <description>
+         EMP Reverse Tooling
+      </description>
+   </category-def>
+</site>
