@@ -37,6 +37,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;
+import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.IPackageFragment;
 import org.eclipse.jdt.core.IPackageFragmentRoot;
@@ -62,6 +63,7 @@ import fr.ifpen.emptooling.reverse.ui.wizards.ReverseToEcoreWizard;
  */
 public class ReverseToEcoreHandler extends AbstractHandler {
 
+	private IJavaProject javaProject;
 	private List<IPackageFragment> javaPackages = new ArrayList<IPackageFragment>();
 
 	/**
@@ -75,7 +77,7 @@ public class ReverseToEcoreHandler extends AbstractHandler {
 		if (!sSelection.isEmpty()) {
 			Object selection = sSelection.getFirstElement();
 			if (selection instanceof IJavaProject) {
-				final IJavaProject javaProject = (IJavaProject) selection;
+				javaProject = (IJavaProject) selection;
 				if (javaPackages.isEmpty()) {
 					try {
 						for (IPackageFragment pf : javaProject.getPackageFragments()) {
@@ -83,97 +85,115 @@ public class ReverseToEcoreHandler extends AbstractHandler {
 								javaPackages.add(pf);
 							}
 						}
-						
-						ReverseToEcoreWizard wizard = new ReverseToEcoreWizard();
-						WizardDialog dialog = new WizardDialog(activeShell, wizard);
-						wizard.setWindowTitle("Reverse configuration");
-
-						if (dialog.open() == Window.OK) {
-							final ReverseSettings reverseSettings = new ReverseSettings();
-							reverseSettings.rootNsPrefix = wizard.getBaseNSPrefix();
-							reverseSettings.rootNsURI = wizard.getBaseURI();
-							reverseSettings.rootPackageName = javaProject.getElementName();
-							final IContainer target = wizard.getTargetContainer();
-							IRunnableWithProgress operation = new IRunnableWithProgress() {
-								public void run(IProgressMonitor monitor) {
-									try {
-										JavaToEcore javaToEcore = null;
-										// create a new plugin to host the generated Ecore model
-										// process packages per packages
-										if (!javaPackages.isEmpty() && javaProject != null) {
-											javaToEcore = new JavaToEcore(javaProject, javaPackages, reverseSettings);
-										}
-										// process a whole java project
-										else if (javaProject != null) {
-											javaToEcore = new JavaToEcore(javaProject, reverseSettings);
-										}
-										if (javaToEcore != null) {
-											javaToEcore.setBaseURI(reverseSettings.rootNsURI);
-											javaToEcore.setBaseNSPrefix(reverseSettings.rootNsPrefix);
-											EPackage reverse = javaToEcore.reverse(monitor);
-											if (reverse != null) {
-												String modelFilename = "reverse";
-												// write logs
-												String NL = System.getProperty("line.separator");
-												List<String> log = javaToEcore.getErrorLog();
-												IFile parsingLogFile = target.getFile(new Path(modelFilename + "ParsingLog.csv"));
-												Writer w = new BufferedWriter(new FileWriter(parsingLogFile.getLocation().toOSString()));
-												for (String s : log) {
-													w.write(s);
-													w.write(NL);
-												}
-												w.close();
-												log = javaToEcore.getGetterLog();
-												IFile gettingLogFile = target.getFile(new Path(modelFilename + "GetterLog.csv"));
-												w = new BufferedWriter(new FileWriter(gettingLogFile.getLocation().toOSString()));
-												for (String s : log) {
-													w.write(s);
-													w.write(NL);
-												}
-												w.close();
-												// write model
-												IFile file = target.getFile(new Path(modelFilename + ".ecore"));
-												URI uri = URI.createFileURI(file.getLocation().toOSString());
-												Resource resource = new EcoreResourceFactoryImpl().createResource(uri);
-												resource.getContents().add(reverse);
-												resource.save(Collections.EMPTY_MAP);
-												target.refreshLocal(IResource.DEPTH_INFINITE, monitor);
-											}
-										}
-									}
-									catch (Exception e) {
-										IStatus status = new Status(IStatus.ERROR, ReverseUIPlugin.PLUGIN_ID, e.getMessage(),e);
-										ReverseUIPlugin.getPlugin().getLog().log(status);
-									}
-								}
-							};
-							try {
-								PlatformUI.getWorkbench().getProgressService().run(true, true, operation);
-							}
-							catch (InvocationTargetException e) {
-								IStatus status = new Status(IStatus.ERROR, ReverseUIPlugin.PLUGIN_ID, e.getMessage(), e);
-								ReverseUIPlugin.getPlugin().getLog().log(status);
-							}
-							catch (InterruptedException e) {
-					            IStatus status = new Status(IStatus.ERROR, ReverseUIPlugin.PLUGIN_ID, e.getMessage(), e);
-					            ReverseUIPlugin.getPlugin().getLog().log(status);
-							}
-
-						}
-
 					} catch (JavaModelException e) {
 						e.printStackTrace();
 					}
 				}
+			} else {
+				if (selection instanceof IPackageFragment
+						&& ((IPackageFragment) selection).getElementType() == IJavaElement.PACKAGE_FRAGMENT) {
+					this.javaPackages.add((IPackageFragment) selection);
+					this.javaProject = ((IPackageFragment) selection).getJavaProject();
+				}
+			}	
+			ReverseToEcoreWizard wizard = new ReverseToEcoreWizard();
+			WizardDialog dialog = new WizardDialog(activeShell, wizard);
+			wizard.setWindowTitle("Reverse configuration");
 
+			if (dialog.open() == Window.OK) {
+				final ReverseSettings reverseSettings = new ReverseSettings();
+				reverseSettings.rootNsPrefix = wizard.getBaseNSPrefix();
+				reverseSettings.rootNsURI = wizard.getBaseURI();
+				reverseSettings.rootPackageName = javaProject.getElementName();
+				final IContainer target = wizard.getTargetContainer();
+				IRunnableWithProgress operation = new ReverseToEcoreRunnable(javaProject, javaPackages, reverseSettings, target);
+				try {
+					PlatformUI.getWorkbench().getProgressService().run(true, true, operation);
+				}
+				catch (InvocationTargetException e) {
+					IStatus status = new Status(IStatus.ERROR, ReverseUIPlugin.PLUGIN_ID, e.getMessage(), e);
+					ReverseUIPlugin.getPlugin().getLog().log(status);
+				}
+				catch (InterruptedException e) {
+					IStatus status = new Status(IStatus.ERROR, ReverseUIPlugin.PLUGIN_ID, e.getMessage(), e);
+					ReverseUIPlugin.getPlugin().getLog().log(status);
+				}
 
-				MessageDialog.openInformation(
-						window.getShell(),
-						"UI plugin for Java to Ecore reverse tooling",
-						"Reversed " + javaProject.getElementName());
 			}
 
 		}
 		return null;
+	}
+
+
+	private static class ReverseToEcoreRunnable implements IRunnableWithProgress {
+
+		private IJavaProject javaProject;
+		private List<IPackageFragment> javaPackages = new ArrayList<IPackageFragment>();
+		private ReverseSettings reverseSettings;
+		private IContainer target;
+
+
+		public ReverseToEcoreRunnable(IJavaProject javaProject, List<IPackageFragment> javaPackages, ReverseSettings reverseSettings, IContainer target) {
+			this.javaProject = javaProject;
+			this.javaPackages = javaPackages;
+			this.reverseSettings = reverseSettings;
+			this.target = target;
+		}
+
+		/**
+		 * @see org.eclipse.jface.operation.IRunnableWithProgress#run(org.eclipse.core.runtime.IProgressMonitor)
+		 */
+		public void run(IProgressMonitor monitor) throws InvocationTargetException, InterruptedException {
+			try {
+				JavaToEcore javaToEcore = null;
+				if (!javaPackages.isEmpty() && javaProject != null) {
+					javaToEcore = new JavaToEcore(javaProject, javaPackages, reverseSettings);
+				}
+				// process a whole java project
+				else if (javaProject != null) {
+					javaToEcore = new JavaToEcore(javaProject, reverseSettings);
+				}
+				if (javaToEcore != null) {
+					javaToEcore.setBaseURI(reverseSettings.rootNsURI);
+					javaToEcore.setBaseNSPrefix(reverseSettings.rootNsPrefix);
+					EPackage reverse = javaToEcore.reverse(monitor);
+					if (reverse != null) {
+						String modelFilename = "reverse";
+						// write logs
+						String NL = System.getProperty("line.separator");
+						List<String> log = javaToEcore.getErrorLog();
+						IFile parsingLogFile = target.getFile(new Path(modelFilename + "ParsingLog.csv"));
+						Writer w = new BufferedWriter(new FileWriter(parsingLogFile.getLocation().toOSString()));
+						for (String s : log) {
+							w.write(s);
+							w.write(NL);
+						}
+						w.close();
+						log = javaToEcore.getGetterLog();
+						IFile gettingLogFile = target.getFile(new Path(modelFilename + "GetterLog.csv"));
+						w = new BufferedWriter(new FileWriter(gettingLogFile.getLocation().toOSString()));
+						for (String s : log) {
+							w.write(s);
+							w.write(NL);
+						}
+						w.close();
+						// write model
+						IFile file = target.getFile(new Path(modelFilename + ".ecore"));
+						URI uri = URI.createFileURI(file.getLocation().toOSString());
+						Resource resource = new EcoreResourceFactoryImpl().createResource(uri);
+						resource.getContents().add(reverse);
+						resource.save(Collections.EMPTY_MAP);
+						target.refreshLocal(IResource.DEPTH_INFINITE, monitor);
+					}
+				}
+			}
+			catch (Exception e) {
+				IStatus status = new Status(IStatus.ERROR, ReverseUIPlugin.PLUGIN_ID, e.getMessage(),e);
+				ReverseUIPlugin.getPlugin().getLog().log(status);
+			}
+		}
+
+
 	}
 }

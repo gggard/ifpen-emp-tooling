@@ -9,7 +9,7 @@
             id="fr.ifpen.emptooling.reverse.ui.category">
       </category>
       <command
-            name="Reverse to Ecore Command"
+            name="Reverse to Ecore"
             categoryId="fr.ifpen.emptooling.reverse.ui.category"
             id="fr.ifpen.emptooling.reverse.ui.commands.reverseToEcoreCommand">
       </command>
