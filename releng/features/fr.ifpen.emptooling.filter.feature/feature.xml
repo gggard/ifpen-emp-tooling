@@ -22,14 +22,21 @@
    </license>
 
    <plugin
-         id="fr.ifpen.emptooling.reverse"
+         id="fr.ifpen.emptooling.filter"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="fr.ifpen.emptooling.reverse.ui"
+         id="fr.ifpen.emptooling.filter.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="fr.ifpen.emptooling.filter.editor"
          download-size="0"
          install-size="0"
          version="0.0.0"
