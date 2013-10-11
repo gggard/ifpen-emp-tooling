@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:eef-components="http://www.eclipse.org/emf/eef/components/1.0.0" xmlns:eef-ext-edt="http://www.eclipse.org/emf/eef/extended/editor/1.0.0" xmlns:eef-views="http://www.eclipse.org/emf/eef/views/1.0.0">
+  <eef-components:PropertiesEditionContext xmi:id="__8aH4G39EeGvBJ3QmEK7Uw" documentation="Editor contribution for cuboidmodeler GenPackage">
+    <categories xsi:type="eef-ext-edt:EEFEditorContributions" xmi:id="__8aH4W39EeGvBJ3QmEK7Uw" name="cuboidmodeler contributions">
+      <bindings xsi:type="eef-ext-edt:StaticEEFEditorContribution" xmi:id="__8aH4m39EeGvBJ3QmEK7Uw" name="Main contribution" views="__8aH5m39EeGvBJ3QmEK7Uw">
+        <input xsi:type="eef-ext-edt:AllResourcesRootsRelativeInput" xmi:id="__8aH4239EeGvBJ3QmEK7Uw"/>
+      </bindings>
+    </categories>
+    <model href="platform:/resource/fr.ifpen.emptooling.samples.cuboid/model/CuboidModeler.genmodel#//cuboid"/>
+  </eef-components:PropertiesEditionContext>
+  <eef-views:ViewsRepository xmi:id="__8aH5G39EeGvBJ3QmEK7Uw" documentation="Editor pages for cuboidmodeler GenPackage" name="cuboidmodeler editor">
+    <RepositoryKind>Editor</RepositoryKind>
+    <categories xsi:type="eef-ext-edt:EEFEditorPages" xmi:id="__8aH5W39EeGvBJ3QmEK7Uw" name="cuboidmodeler editor pages">
+      <views xsi:type="eef-ext-edt:TreeMasterPage" xmi:id="__8aH5m39EeGvBJ3QmEK7Uw" name="main" title="cuboidmodeler"/>
+    </categories>
+  </eef-views:ViewsRepository>
+</xmi:XMI>
