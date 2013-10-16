@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ Copyright IFP Energies nouvelles (c) 2012
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="fr.ifpen.emptooling.samples.cuboid.presentation.CuboidModelerModelWizardID"
+            name="%_UI_CuboidModelerModelWizard_label"
+            class="fr.ifpen.emptooling.samples.cuboid.presentation.CuboidModelerModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/CuboidModelerModelFile.gif">
+         <description>%_UI_CuboidModelerModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="fr.ifpen.emptooling.samples.cuboid.presentation.CuboidModelerEditorID"
+            name="%_UI_CuboidModelerEditor_label"
+            icon="icons/full/obj16/CuboidModelerModelFile.gif"
+            extensions="cuboid"
+            class="fr.ifpen.emptooling.samples.cuboid.presentation.CuboidModelerEditor"
+            contributorClass="fr.ifpen.emptooling.samples.cuboid.presentation.CuboidModelerActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

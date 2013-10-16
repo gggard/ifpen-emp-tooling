@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:eef-components="http://www.eclipse.org/emf/eef/components/1.0.0" xmlns:eef-views="http://www.eclipse.org/emf/eef/views/1.0.0">
+  <eef-components:PropertiesEditionContext xmi:id="_-9ir4W39EeGvBJ3QmEK7Uw" documentation="Edition Context for cuboidmodeler GenPackage">
+    <categories xmi:id="_-9ir4m39EeGvBJ3QmEK7Uw" name="cuboidmodeler">
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_-9ir4239EeGvBJ3QmEK7Uw" name="Scene" views="_-9ir-W39EeGvBJ3QmEK7Uw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_-9ir5G39EeGvBJ3QmEK7Uw" name="cubes" views="_-9ir-239EeGvBJ3QmEK7Uw _pMvAEG3_EeGvBJ3QmEK7Uw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/fr.ifpen.emptooling.samples.cuboid/model/CuboidModeler.ecore#//Scene/cubes"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_-9ir5W39EeGvBJ3QmEK7Uw" name="rotationX" views="_-9ir_G39EeGvBJ3QmEK7Uw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/fr.ifpen.emptooling.samples.cuboid/model/CuboidModeler.ecore#//Scene/rotationX"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_-9ir5m39EeGvBJ3QmEK7Uw" name="translationX" views="_-9ir_W39EeGvBJ3QmEK7Uw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/fr.ifpen.emptooling.samples.cuboid/model/CuboidModeler.ecore#//Scene/translationX"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_-9ir5239EeGvBJ3QmEK7Uw" name="translationY" views="_-9ir_m39EeGvBJ3QmEK7Uw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/fr.ifpen.emptooling.samples.cuboid/model/CuboidModeler.ecore#//Scene/translationY"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_-9ir6G39EeGvBJ3QmEK7Uw" name="translationZ" views="_-9ir_239EeGvBJ3QmEK7Uw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/fr.ifpen.emptooling.samples.cuboid/model/CuboidModeler.ecore#//Scene/translationZ"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_-9ir6W39EeGvBJ3QmEK7Uw" name="rotationY" views="_-9isAG39EeGvBJ3QmEK7Uw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/fr.ifpen.emptooling.samples.cuboid/model/CuboidModeler.ecore#//Scene/rotationY"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_-9ir6m39EeGvBJ3QmEK7Uw" name="rotationZ" views="_-9isAW39EeGvBJ3QmEK7Uw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/fr.ifpen.emptooling.samples.cuboid/model/CuboidModeler.ecore#//Scene/rotationZ"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_v6wEcK5vEeGfNvkz0q1m9Q" name="rotate" views="_rbbZcK5vEeGfNvkz0q1m9Q">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/fr.ifpen.emptooling.samples.cuboid/model/CuboidModeler.ecore#//Scene/rotate"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_PcnXkK9TEeGeEJ2aMD9afg" name="showWires" views="_Gx97oK9TEeGeEJ2aMD9afg">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/fr.ifpen.emptooling.samples.cuboid/model/CuboidModeler.ecore#//Scene/showWires"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_QCqD4K9TEeGeEJ2aMD9afg" name="showFaces" views="_KS2BYK9TEeGeEJ2aMD9afg">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/fr.ifpen.emptooling.samples.cuboid/model/CuboidModeler.ecore#//Scene/showFaces"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/fr.ifpen.emptooling.samples.cuboid/model/CuboidModeler.ecore#//Scene"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_-9ir6239EeGvBJ3QmEK7Uw" name="Cuboid" views="_-9isAm39EeGvBJ3QmEK7Uw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_-9ir7G39EeGvBJ3QmEK7Uw" name="posX" views="_-9isBG39EeGvBJ3QmEK7Uw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/fr.ifpen.emptooling.samples.cuboid/model/CuboidModeler.ecore#//SceneObj/posX"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_-9ir7W39EeGvBJ3QmEK7Uw" name="posY" views="_-9jS8G39EeGvBJ3QmEK7Uw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/fr.ifpen.emptooling.samples.cuboid/model/CuboidModeler.ecore#//SceneObj/posY"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_-9ir7m39EeGvBJ3QmEK7Uw" name="posZ" views="_-9jS8W39EeGvBJ3QmEK7Uw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/fr.ifpen.emptooling.samples.cuboid/model/CuboidModeler.ecore#//SceneObj/posZ"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_-9ir7239EeGvBJ3QmEK7Uw" name="red" views="_-9jS8m39EeGvBJ3QmEK7Uw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/fr.ifpen.emptooling.samples.cuboid/model/CuboidModeler.ecore#//SceneObj/red"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_-9ir8G39EeGvBJ3QmEK7Uw" name="green" views="_-9jS8239EeGvBJ3QmEK7Uw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/fr.ifpen.emptooling.samples.cuboid/model/CuboidModeler.ecore#//SceneObj/green"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_-9ir8W39EeGvBJ3QmEK7Uw" name="blue" views="_-9jS9G39EeGvBJ3QmEK7Uw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/fr.ifpen.emptooling.samples.cuboid/model/CuboidModeler.ecore#//SceneObj/blue"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_-9ir8m39EeGvBJ3QmEK7Uw" name="name" views="_-9jS9W39EeGvBJ3QmEK7Uw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/fr.ifpen.emptooling.samples.cuboid/model/CuboidModeler.ecore#//SceneObj/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_-9ir8239EeGvBJ3QmEK7Uw" name="opacity" views="_-9jS9m39EeGvBJ3QmEK7Uw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/fr.ifpen.emptooling.samples.cuboid/model/CuboidModeler.ecore#//SceneObj/opacity"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_-9ir9G39EeGvBJ3QmEK7Uw" name="length" views="_-9jS9239EeGvBJ3QmEK7Uw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/fr.ifpen.emptooling.samples.cuboid/model/CuboidModeler.ecore#//Cuboid/length"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_-9ir9W39EeGvBJ3QmEK7Uw" name="height" views="_-9jS-G39EeGvBJ3QmEK7Uw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/fr.ifpen.emptooling.samples.cuboid/model/CuboidModeler.ecore#//Cuboid/height"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_-9ir9m39EeGvBJ3QmEK7Uw" name="depth" views="_-9jS-W39EeGvBJ3QmEK7Uw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/fr.ifpen.emptooling.samples.cuboid/model/CuboidModeler.ecore#//Cuboid/depth"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/fr.ifpen.emptooling.samples.cuboid/model/CuboidModeler.ecore#//Cuboid"/>
+      </bindings>
+    </categories>
+    <model href="platform:/resource/fr.ifpen.emptooling.samples.cuboid/model/CuboidModeler.genmodel#//cuboid"/>
+  </eef-components:PropertiesEditionContext>
+  <eef-views:ViewsRepository xmi:id="_-9ir9239EeGvBJ3QmEK7Uw" documentation="Views repository for cuboidmodeler GenPackage" name="cuboidmodeler">
+    <RepositoryKind>SWT</RepositoryKind>
+    <RepositoryKind>Form</RepositoryKind>
+    <categories xmi:id="_-9ir-G39EeGvBJ3QmEK7Uw" name="cuboidmodeler">
+      <views xmi:id="_-9ir-W39EeGvBJ3QmEK7Uw" name="Scene">
+        <elements xsi:type="eef-views:Container" xmi:id="_-9ir-m39EeGvBJ3QmEK7Uw" name="Objects">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_-9ir-239EeGvBJ3QmEK7Uw" name="cubes">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+        </elements>
+        <elements xsi:type="eef-views:Container" xmi:id="_ypOIoG3_EeGvBJ3QmEK7Uw" name="Transformations">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:Container" xmi:id="_2RFAIG3_EeGvBJ3QmEK7Uw" name="Translation">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.6"/>
+            <elements xsi:type="eef-views:ElementEditor" xmi:id="_-9ir_W39EeGvBJ3QmEK7Uw" name="translationX">
+              <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+            </elements>
+            <elements xsi:type="eef-views:ElementEditor" xmi:id="_-9ir_m39EeGvBJ3QmEK7Uw" name="translationY">
+              <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+            </elements>
+            <elements xsi:type="eef-views:ElementEditor" xmi:id="_-9ir_239EeGvBJ3QmEK7Uw" name="translationZ">
+              <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+            </elements>
+          </elements>
+          <elements xsi:type="eef-views:Container" xmi:id="_4Z0OQG3_EeGvBJ3QmEK7Uw" name="Rotation">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.6"/>
+            <elements xsi:type="eef-views:ElementEditor" xmi:id="_-9ir_G39EeGvBJ3QmEK7Uw" name="rotationX">
+              <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+            </elements>
+            <elements xsi:type="eef-views:ElementEditor" xmi:id="_-9isAG39EeGvBJ3QmEK7Uw" name="rotationY">
+              <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+            </elements>
+            <elements xsi:type="eef-views:ElementEditor" xmi:id="_-9isAW39EeGvBJ3QmEK7Uw" name="rotationZ">
+              <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+            </elements>
+          </elements>
+          <elements xsi:type="eef-views:Container" xmi:id="_bmcQIK9TEeGeEJ2aMD9afg" name="Flags">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.6"/>
+            <elements xsi:type="eef-views:ElementEditor" xmi:id="_rbbZcK5vEeGfNvkz0q1m9Q" name="rotate">
+              <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.1"/>
+            </elements>
+            <elements xsi:type="eef-views:ElementEditor" xmi:id="_Gx97oK9TEeGeEJ2aMD9afg" name="show Wires">
+              <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.1"/>
+            </elements>
+            <elements xsi:type="eef-views:ElementEditor" xmi:id="_KS2BYK9TEeGeEJ2aMD9afg" name="show Faces">
+              <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.1"/>
+            </elements>
+          </elements>
+        </elements>
+        <elements xsi:type="eef-views:Container" xmi:id="_l6Im4G3_EeGvBJ3QmEK7Uw" name="View">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.5"/>
+          <elements xsi:type="eef-views:CustomElementEditor" xmi:id="_pMvAEG3_EeGvBJ3QmEK7Uw" name="newt"/>
+        </elements>
+      </views>
+      <views xmi:id="_-9isAm39EeGvBJ3QmEK7Uw" name="Cuboid">
+        <elements xsi:type="eef-views:ElementEditor" xmi:id="_-9jS9W39EeGvBJ3QmEK7Uw" name="name">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+        </elements>
+        <elements xsi:type="eef-views:Container" xmi:id="_-9isA239EeGvBJ3QmEK7Uw" name="Position">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_-9isBG39EeGvBJ3QmEK7Uw" name="posX">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_-9jS8G39EeGvBJ3QmEK7Uw" name="posY">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_-9jS8W39EeGvBJ3QmEK7Uw" name="posZ">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+        <elements xsi:type="eef-views:Container" xmi:id="_QwHqwG4AEeGvBJ3QmEK7Uw" name="Color">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_-9jS8m39EeGvBJ3QmEK7Uw" name="red">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_-9jS8239EeGvBJ3QmEK7Uw" name="green">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_-9jS9G39EeGvBJ3QmEK7Uw" name="blue">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_-9jS9m39EeGvBJ3QmEK7Uw" name="opacity">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+        <elements xsi:type="eef-views:Container" xmi:id="_Sw0-QG4AEeGvBJ3QmEK7Uw" name="Attributes">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_-9jS9239EeGvBJ3QmEK7Uw" name="length">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_-9jS-G39EeGvBJ3QmEK7Uw" name="height">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_-9jS-W39EeGvBJ3QmEK7Uw" name="depth">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+    </categories>
+  </eef-views:ViewsRepository>
+</xmi:XMI>

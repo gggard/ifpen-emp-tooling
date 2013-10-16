@@ -1,0 +1,58 @@
+Following EEF Custom Element Editor tutorial on page http://wiki.eclipse.org/EEF/User_Guide/Custom_Element_Editor,
+this project proposes a EEF customization to embed a JOGL based 3d view widget in a EEF generated GUI.
+
+Purpose of this sample project is to propose a Cuboid (or rectangular parallelepiped) Editor with a 3D graphical representation.
+For this, a very simple Ecore model has been built, it consists in two concepts: a Scene and a collection of Cuboid in  the Scene.
+A Cuboid is a SceneObject, this latest contains some general attributes for a graphic object: color, opacity and position.
+EEF editor is generated from this very simple Ecore model by using "EEF->Initialize EEF Editor" from the contextual menu of the Ecore model file.
+
+Then, from this generated code, we applied the Custom Element Editor customization as described in the EEF Wiki:
+
+* In the ScenePropertiesEditionComponent
+-> modif in initPart method to intialize custom 3D view widget content input (in this case the whole Scene is the input for the 3D viewer):
+            if (isAccessible(CuboidmodelerViewsRepository.Scene.View.newt)) {
+                basePart.initScene(scene);
+            }
+
+
+* In the ScenePropertiesEditionPart
+-> just need to add a single service that init the PropertiesEditionPart with the Scene object:
+    public void initScene(Scene scene);
+
+
+* In the ScenePropertiesEditionPartForm and ScenePropertiesEditionPartImpl
+-> implementation of the initScene service from ScenePropertiesEditionPart interface:
+    @Override
+    public void initScene(Scene scene) {
+        cubeModelerContext.setInput(scene);
+    }
+
+-> 3D View widget declaration in two field:
+    protected NEWTWidget newt;
+    protected CuboidModelerGLEventListener cubeModelerContext;
+
+-> modif in createControls methods to add 3D View widget creation:
+                if (key == CuboidmodelerViewsRepository.Scene.View.newt) {
+                    return createNewtWidget(widgetFactory, parent);
+                }
+
+-> implementation of the creation of the 3D View widget:
+(here we use utility code from NewtView plugin to create the 3D view and implements custom behavior for the CuboidModeler through two classes in the src directory)
+    protected Composite createNewtWidget(FormToolkit widgetFactory, Composite parent) {
+        cubeModelerContext = new CuboidModelerGLEventListener(parent.getDisplay());
+        newt = new NEWTWidget(parent, SWT.NONE, cubeModelerContext,
+                new CuboidModelerInputEventListener(cubeModelerContext));
+        newt.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
+        widgetFactory.paintBordersFor(parent);
+        GridData newtData = new GridData(SWT.FILL, SWT.FILL, true, true);
+        newtData.horizontalSpan = 3;
+        newt.setLayoutData(newtData);
+        return parent;
+    }
+
+
+Some problem with the EEF 1.1 version when generating code for this project:
+- when using HorizontalBox EEF widget type, imports are not generated correctly
+- when using VerticalBox EEF widget type, the create*VBox method misses a layout grid data information:
+	container.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+- problem with import organization in some generated classes

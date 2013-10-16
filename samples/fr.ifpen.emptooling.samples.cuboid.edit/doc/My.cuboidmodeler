@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CuboidModeler:Scene xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:CuboidModeler="http://fr.ifpen.eclipselabs.cuboidmodeler/1.0/" translationY="-2" translationZ="-9" rotationY="74.40001">
+  <cubes posX="-1" red="250" green="50" blue="50" name="Cube rouge" opacity="150" length="3" height="2" depth="2"/>
+  <cubes posZ="1" red="50" green="250" blue="50" name="Cube vert" opacity="150" length="1" height="2" depth="4"/>
+  <cubes posX="-2" posY="1" posZ="-1" red="50" green="50" blue="250" name="Cube bleu" opacity="150" length="5" height="2" depth="4"/>
+</CuboidModeler:Scene>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright IFP Energies nouvelles (c) 2012"
+    modelDirectory="/fr.ifpen.emptooling.samples.cuboid/src-gen" editDirectory="/fr.ifpen.emptooling.samples.cuboid.edit/src-gen"
+    editorDirectory="/fr.ifpen.emptooling.samples.cuboid.editor/src-gen" modelPluginID="fr.ifpen.emptooling.samples.cuboid"
+    modelName="Cuboid" editPluginClass="fr.ifpen.emptooling.samples.cuboid.provider.CuboidEditPlugin"
+    editorPluginClass="fr.ifpen.emptooling.samples.cuboid.presentation.CuboidEditorPlugin"
+    testSuiteClass="fr.ifpen.emptooling.samples.cuboid.tests.CuboidAllTests" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false" editPluginID="fr.ifpen.emptooling.samples.cuboid.edit"
+    editorPluginID="fr.ifpen.emptooling.samples.cuboid.editor" language="">
+  <foreignModel>CuboidModeler.ecore</foreignModel>
+  <genPackages prefix="CuboidModeler" basePackage="fr.ifpen.emptooling.samples" disposableProviderFactory="true"
+      adapterFactory="false" fileExtensions="cuboid" ecorePackage="CuboidModeler.ecore#/">
+    <genClasses ecoreClass="CuboidModeler.ecore#//Scene">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CuboidModeler.ecore#//Scene/cubes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CuboidModeler.ecore#//Scene/rotationX"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CuboidModeler.ecore#//Scene/translationX"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CuboidModeler.ecore#//Scene/translationY"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CuboidModeler.ecore#//Scene/translationZ"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CuboidModeler.ecore#//Scene/rotationY"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CuboidModeler.ecore#//Scene/rotationZ"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CuboidModeler.ecore#//Scene/rotate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CuboidModeler.ecore#//Scene/showWires"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CuboidModeler.ecore#//Scene/showFaces"/>
+    </genClasses>
+    <genClasses ecoreClass="CuboidModeler.ecore#//Cuboid">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CuboidModeler.ecore#//Cuboid/length"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CuboidModeler.ecore#//Cuboid/height"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CuboidModeler.ecore#//Cuboid/depth"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="CuboidModeler.ecore#//SceneObj">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CuboidModeler.ecore#//SceneObj/posX"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CuboidModeler.ecore#//SceneObj/posY"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CuboidModeler.ecore#//SceneObj/posZ"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CuboidModeler.ecore#//SceneObj/red"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CuboidModeler.ecore#//SceneObj/green"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CuboidModeler.ecore#//SceneObj/blue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CuboidModeler.ecore#//SceneObj/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CuboidModeler.ecore#//SceneObj/opacity"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

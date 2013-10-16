@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CuboidModeler:Scene xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:CuboidModeler="http://fr.ifpen.emptooling.samples.cuboid/1.0/" rotationX="25.0" translationX="-5" translationZ="-18" rotate="true">
+  <cubes red="250" green="50" blue="50" name="Cube E1" opacity="250" length="1" height="5" depth="1"/>
+  <cubes posX="1" red="250" green="50" blue="50" name="Cube E2" opacity="250" length="3" height="1" depth="1"/>
+  <cubes posX="1" posY="2" red="250" green="50" blue="50" name="Cube E3" opacity="250" length="3" height="1" depth="1"/>
+  <cubes posX="1" posY="4" red="250" green="50" blue="50" name="Cube E4" opacity="250" length="3" height="1" depth="1"/>
+  <cubes posX="5" red="50" green="250" blue="50" name="Cube E5" opacity="250" length="1" height="5" depth="1"/>
+  <cubes posX="6" red="50" green="250" blue="50" name="Cube E6" opacity="250" length="3" height="1" depth="1"/>
+  <cubes posX="6" posY="2" red="50" green="250" blue="50" name="Cube E7" opacity="250" length="3" height="1" depth="1"/>
+  <cubes posX="6" posY="4" red="50" green="250" blue="50" name="Cube E8" opacity="250" length="3" height="1" depth="1"/>
+  <cubes posX="10" red="50" green="50" blue="250" name="Cube F1" opacity="250" length="1" height="5" depth="1"/>
+  <cubes posX="11" posY="2" red="50" green="50" blue="250" name="Cube F2" opacity="250" length="3" height="1" depth="1"/>
+  <cubes posX="11" posY="4" red="50" green="50" blue="250" name="Cube F3" opacity="250" length="3" height="1" depth="1"/>
+</CuboidModeler:Scene>

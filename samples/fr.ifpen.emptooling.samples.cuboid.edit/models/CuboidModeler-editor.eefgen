@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ASCII"?>
+<eef-gen:EEFGenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:eef-gen="http://www.eclipse.org/emf/eef/generation/1.0.0" genDirectory="/fr.ifpen.emptooling.samples.cuboid.editor/src-gen">
+  <editionContexts basePackage="fr.ifpen.emptooling.samples" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="CuboidModeler-editor.components#__8aH4G39EeGvBJ3QmEK7Uw"/>
+  </editionContexts>
+  <viewsRepositories basePackage="fr.ifpen.emptooling.samples.cuboid" swtViews="true" formViews="true">
+    <viewsRepository href="CuboidModeler-editor.components#__8aH5G39EeGvBJ3QmEK7Uw"/>
+  </viewsRepositories>
+</eef-gen:EEFGenModel>

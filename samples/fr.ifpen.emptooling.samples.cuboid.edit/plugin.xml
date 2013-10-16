@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><?eclipse version="3.0"?>
+<!--
+ Copyright IFP Energies nouvelles (c) 2012
+--><plugin>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory class="fr.ifpen.emptooling.samples.cuboid.provider.CuboidModelerItemProviderAdapterFactory" supportedTypes="org.eclipse.emf.edit.provider.IEditingDomainItemProvider                org.eclipse.emf.edit.provider.IStructuredItemContentProvider                org.eclipse.emf.edit.provider.ITreeItemContentProvider                org.eclipse.emf.edit.provider.IItemLabelProvider                org.eclipse.emf.edit.provider.IItemPropertySource" uri="http://fr.ifpen.emptooling.samples.cuboid/1.0/"/>
+   </extension>
+
+<extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory class="fr.ifpen.emptooling.samples.cuboid.providers.CuboidmodelerCustomEEFAdapterFactory" supportedTypes="org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider" uri="http://fr.ifpen.emptooling.samples.cuboid/1.0/"/>
+   </extension><extension point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
+      <PropertiesEditionPartProvider providerClass="fr.ifpen.emptooling.samples.cuboid.providers.CuboidmodelerPropertiesEditionPartProvider">
+      </PropertiesEditionPartProvider>
+   </extension><extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+      <propertyContributor contributorId="fr.ifpen.emptooling.samples.cuboid.properties" labelProvider="org.eclipse.emf.eef.runtime.ui.utils.EEFLabelProvider">
+         <propertyCategory category="default">
+         </propertyCategory>
+         <propertyCategory category="extended">
+         </propertyCategory>
+         <propertyCategory category="advanced">
+         </propertyCategory>
+      </propertyContributor>
+   </extension><extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <propertyTabs contributorId="fr.ifpen.emptooling.samples.cuboid.properties">
+         <propertyTab category="default" id="Base" label="Base">
+         </propertyTab>
+
+      </propertyTabs>
+   </extension><extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
+      <propertySections contributorId="fr.ifpen.emptooling.samples.cuboid.properties">
+         <propertySection class="fr.ifpen.emptooling.samples.cuboid.parts.forms.ScenePropertiesEditionPartForm" filter="fr.ifpen.emptooling.samples.cuboid.providers.ScenePropertiesEditionProvider$EditionFilter" id="fr.ifpen.emptooling.samples.cuboid.section.Scene" tab="Base">
+         </propertySection>
+         <propertySection class="fr.ifpen.emptooling.samples.cuboid.parts.forms.CuboidPropertiesEditionPartForm" filter="fr.ifpen.emptooling.samples.cuboid.providers.CuboidPropertiesEditionProvider$EditionFilter" id="fr.ifpen.emptooling.samples.cuboid.section.Cuboid" tab="Base">
+         </propertySection>
+      </propertySections>
+   </extension></plugin>
