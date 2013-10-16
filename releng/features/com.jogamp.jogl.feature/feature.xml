@@ -2,7 +2,7 @@
 <feature
       id="com.jogamp.jogl.feature"
       label="JOGL Standard Feature"
-      version="1.0.0.qualifier"
+      version="2.0.0"
       provider-name="JOGAMP">
 
    <description url="http://www.example.com/description">
@@ -22,5 +22,45 @@
          download-size="0"
          install-size="0"
          version="0.0.0"/>
+
+   <plugin
+         id="com.jogamp.jogl-linux-i586"
+         os="linux"
+         arch="x86"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         fragment="true"
+         unpack="false"/>
+
+   <plugin
+         id="com.jogamp.jogl-windows-i586"
+         os="win32"
+         arch="x86"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         fragment="true"
+         unpack="false"/>
+
+   <plugin
+         id="com.jogamp.jogl-macosx-universal"
+         os="macosx"
+         arch="x86_64"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         fragment="true"
+         unpack="false"/>
+
+   <plugin
+         id="com.jogamp.jogl-windows-amd64"
+         os="win32"
+         arch="x86_64"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         fragment="true"
+         unpack="false"/>
 
 </feature>

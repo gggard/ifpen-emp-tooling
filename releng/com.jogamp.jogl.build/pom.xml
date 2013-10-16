@@ -45,10 +45,6 @@
   	<module>../../plugins/jogl-distribution/com.jogamp.jogl-windows-amd64</module>
   	<module>../../plugins/jogl-distribution/com.jogamp.jogl-macosx-universal</module>
   	<module>../features/com.jogamp.jogl.feature</module>
-  	<module>../features/com.jogamp.jogl.linux.x86.feature</module>
-  	<module>../features/com.jogamp.jogl.macosx.universal.feature</module>
-  	<module>../features/com.jogamp.jogl.win32.x86_64.feature</module>
-  	<module>../features/com.jogamp.jogl.win32.x86.feature</module>
   	<module>../repositories/com.jogamp.jogl.repository</module>
   </modules>
 

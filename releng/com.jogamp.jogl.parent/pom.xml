@@ -8,9 +8,9 @@
     <maven>3.0</maven>
   </prerequisites>
 
-  <groupId>com.jogamp.jogl</groupId>
-  <artifactId>parent</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <groupId>com.jogamp</groupId>
+  <artifactId>jogl.parent</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>JOGL Distribution Parent</name>
@@ -48,6 +48,28 @@
         <version>${tycho-version}</version>
         <configuration>
           <resolver>p2</resolver>
+          <environments>
+            <environment>
+              <os>win32</os>
+              <ws>win32</ws>
+              <arch>x86</arch>
+            </environment>
+            <environment>
+              <os>win32</os>
+              <ws>win32</ws>
+              <arch>x86_64</arch>
+            </environment>
+            <environment>
+              <os>linux</os>
+              <ws>gtk</ws>
+              <arch>x86</arch>
+            </environment>
+            <environment>
+              <os>macosx</os>
+              <ws>cocoa</ws>
+              <arch>x86_64</arch>
+            </environment>
+          </environments>
         </configuration>
       </plugin>
     </plugins>

@@ -1,28 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/com.jogamp.jogl.feature_1.0.0.qualifier.jar" id="com.jogamp.jogl.feature" version="1.0.0.qualifier">
+   <feature url="features/com.jogamp.jogl.feature_2.0.0.jar" id="com.jogamp.jogl.feature" version="2.0.0">
       <category name="com.jogamp.jogl"/>
-   </feature>
-   <feature url="features/com.jogamp.jogl.linux.x68.feature_1.0.0.qualifier.jar" id="com.jogamp.jogl.linux.x68.feature" version="1.0.0.qualifier" os="linux" ws="gtk" arch="x86">
-      <category name="com.jogamp.jogl.platform"/>
-   </feature>
-   <feature url="features/com.jogamp.jogl.macosx.universal.feature_1.0.0.qualifier.jar" id="com.jogamp.jogl.macosx.universal.feature" version="1.0.0.qualifier" os="macosx" ws="cocoa" arch="x86_64">
-      <category name="com.jogamp.jogl.platform"/>
-   </feature>
-   <feature url="features/com.jogamp.jogl.win32.x86.feature_1.0.0.qualifier.jar" id="com.jogamp.jogl.win32.x86.feature" version="1.0.0.qualifier" os="win32" ws="win32" arch="x86">
-      <category name="com.jogamp.jogl.platform"/>
-   </feature>
-   <feature url="features/com.jogamp.jogl.win32.x86_64.feature_1.0.0.qualifier.jar" id="com.jogamp.jogl.win32.x86_64.feature" version="1.0.0.qualifier" os="win32" ws="win32" arch="x86_64">
-      <category name="com.jogamp.jogl.platform"/>
    </feature>
    <category-def name="com.jogamp.jogl" label="JOGL">
       <description>
          JOGL
-      </description>
-   </category-def>
-   <category-def name="com.jogamp.jogl.platform" label="JOGL Platform specific bundle">
-      <description>
-         Platform specific fragment for JOGL Plugin
       </description>
    </category-def>
 </site>
