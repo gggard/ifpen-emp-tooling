@@ -33,6 +33,7 @@
     <tycho-version>0.16.0</tycho-version>
     <platform-version-name>indigo</platform-version-name>
     <eclipse-site>http://download.eclipse.org/releases/${platform-version-name}</eclipse-site>
+    <eef-site>http://download.eclipse.org/modeling/emft/eef/updates/releases/1.2/R201309121245/</eef-site>
   </properties>
 
   <repositories>
@@ -40,6 +41,16 @@
       <id>indigo</id>
       <layout>p2</layout>
       <url>${eclipse-site}</url>
+    </repository>
+    <repository>
+    	<id>EEF 1.2</id>
+    	<layout>p2</layout>
+    	<url>${eef-site}</url>
+    </repository>
+    <repository>
+    	<id>JOGL</id>
+    	<layout>p2</layout>
+    	<url>https://googledrive.com/host/0BzVxxkst7BU5QkdaSkJET0VUU1U/</url>
     </repository>
    </repositories>
   
@@ -87,21 +98,5 @@
       </plugins>
     </pluginManagement>
   </build>
-  
-  <profiles>
-    <profile>
-      <id>platform-indigo</id>
-      <activation>
-        <property>
-          <name>platform-version-name</name>
-          <value>indigo</value>
-        </property>
-      </activation>
-      <properties>
-        <eclipse-site>http://download.eclipse.org/releases/indigo</eclipse-site>
-        <platform-version>[3.6,3.7)</platform-version>
-      </properties>
-    </profile>
-  </profiles>
-  
+    
 </project>

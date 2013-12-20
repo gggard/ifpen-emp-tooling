@@ -47,6 +47,9 @@
   	<module>../features/fr.ifpen.emptooling.reverse.feature</module>
   	<module>../features/fr.ifpen.emptooling.filter.feature</module>
   	<module>../repositories/fr.ifpen.emptooling</module>
+  	<module>../../samples/fr.ifpen.emptooling.samples.cuboid</module>
+  	<module>../../samples/fr.ifpen.emptooling.samples.newtview</module>
+  	<!--module>../../samples/fr.ifpen.emptooling.samples.cuboid.edit</module-->
   </modules>
 
 </project>
