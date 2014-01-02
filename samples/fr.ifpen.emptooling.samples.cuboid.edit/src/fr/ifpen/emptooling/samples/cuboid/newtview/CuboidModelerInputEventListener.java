@@ -32,7 +32,7 @@ public class CuboidModelerInputEventListener extends NEWTInputEventListener {
     @Override
     public void mouseWheelMoved(MouseEvent e) {
         super.mouseWheelMoved(e);
-        int wheelRotation = e.getWheelRotation();
+        int wheelRotation = (int) e.getWheelRotation();
         glListener.setSceneTranslation(glListener.getSceneTranslation() + wheelRotation);
     }
 }

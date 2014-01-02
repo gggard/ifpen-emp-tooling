@@ -6,6 +6,9 @@
    <feature url="features/fr.ifpen.emptooling.filter.feature_1.0.0.qualifier.jar" id="fr.ifpen.emptooling.filter.feature" version="1.0.0.qualifier">
       <category name="fr.ifpen.emptooling.filter"/>
    </feature>
+   <feature url="features/fr.ifpen.emptooling.samples.cuboid.feature_1.0.0.qualifier.jar" id="fr.ifpen.emptooling.samples.cuboid.feature" version="1.0.0.qualifier">
+      <category name="fr.ifpen.emptooling.samples.cuboid"/>
+   </feature>
    <category-def name="fr.ifpen.emptooling.reverse" label="Reverse">
       <description>
          EMP Reverse Tooling
@@ -14,6 +17,11 @@
    <category-def name="fr.ifpen.emptooling.filter" label="Model Filtering">
       <description>
          EMP Filtering Tooling
+      </description>
+   </category-def>
+   <category-def name="fr.ifpen.emptooling.samples.cuboid" label="Cuboid Sample">
+      <description>
+         Cuboid Modeler EEF Sample
       </description>
    </category-def>
 </site>

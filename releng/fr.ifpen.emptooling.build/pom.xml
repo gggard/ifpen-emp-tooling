@@ -44,12 +44,14 @@
   	<module>../../plugins/fr.ifpen.emptooling.filter</module>
   	<module>../../plugins/fr.ifpen.emptooling.filter.edit</module>
   	<module>../../plugins/fr.ifpen.emptooling.filter.editor</module>
-  	<module>../features/fr.ifpen.emptooling.reverse.feature</module>
-  	<module>../features/fr.ifpen.emptooling.filter.feature</module>
-  	<module>../repositories/fr.ifpen.emptooling</module>
   	<module>../../samples/fr.ifpen.emptooling.samples.cuboid</module>
   	<module>../../samples/fr.ifpen.emptooling.samples.newtview</module>
-  	<!--module>../../samples/fr.ifpen.emptooling.samples.cuboid.edit</module-->
+  	<module>../../samples/fr.ifpen.emptooling.samples.cuboid.edit</module>
+  	<module>../../samples/fr.ifpen.emptooling.samples.cuboid.editor</module>
+  	<module>../features/fr.ifpen.emptooling.reverse.feature</module>
+  	<module>../features/fr.ifpen.emptooling.filter.feature</module>
+  	<module>../features/fr.ifpen.emptooling.samples.cuboid.feature</module>
+  	<module>../repositories/fr.ifpen.emptooling</module>
   </modules>
 
 </project>
