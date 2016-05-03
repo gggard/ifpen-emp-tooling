@@ -1,0 +1,4 @@
+[JOGL](http://jogamp.org/jogl/www/) is Java binding for [OpenGL](http://www.khronos.org/opengl) 3D graphics API and is actively developed by [JogAmp Community](http://jogamp.org/).
+In addition to the [OpenGL API](http://www.opengl.org/), [JOGL](http://jogamp.org/jogl/www/) also provides a platform independent implementation of a lightweight framework to manage OpenGL rendering context and windowing. It's this framework named NEWT that will be used in this work.
+
+One of the great advantages of using JOGL, as its [version 2](http://jogamp.org/wiki/index.php/Jogamp_Versioning_and_Releases), is the support for all the major development platforms: JOGL runs on Windows, Linux (and more generally X11), MacOS X and Android and supports up to [GLES4 version](http://www.opengl.org/documentation/current_version/) with backward compatibility with older GL specifications.
